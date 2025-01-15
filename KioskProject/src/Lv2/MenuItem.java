@@ -7,7 +7,7 @@ public class MenuItem {
     private String name;            //  이름
     private double price;           //  가격
     private String description;     //  설명
-    
+
     public MenuItem(String name, double price, String description){
         this.name = name;
         this.price = price;
