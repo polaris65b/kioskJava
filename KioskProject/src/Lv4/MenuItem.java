@@ -21,24 +21,11 @@ public class MenuItem {
         this.subMenu = subMenu; // 하위 메뉴가 있는 경우
     }
 
-    // 이름 반환하는 메서드
-    public String getName() {
-        return name;
-    }
-
-    // 가격 반환하는 메서드
-    public double getPrice() {
-        return price;
-    }
-
-    // 설명 반환하는 메서드
-    public String getDescription() {
-        return description;
-    }
-
-    public Menu getSubMenu() {
-        return subMenu; // 하위 메뉴 반환
-    }
+    // getter
+    public String getName() {return name;}
+    public double getPrice() {return price;}
+    public String getDescription() {return description;}
+    public Menu getSubMenu() {return subMenu;}
 
     @Override
     public String toString() {
