@@ -1,15 +1,43 @@
 package Lv4;
 
-// MenuItem 클래스를 관리하는 클래스입니다.
-// 버거 메뉴, 음료 메뉴 등 각 카테고리 내에 여러 MenuItem을 포함합니다.
-// List<MenuItem> 은 Kiosk 클래스가 관리하기에 적절하지 않으므로 Menu 클래스가 관리하도록 변경합니다
-// 여러 버거들을 포함하는 상위 개념 ‘버거’ 같은 카테고리 이름 필드를 갖습니다.
-// 메뉴 카테고리 이름을 반환하는 메서드가 구현되어야 합니다.
+import java.util.ArrayList;
+import java.util.List;
+
 public class Menu {
+    // 필드
+    private String name;
+    private List<MenuItem> menuItems;
+
+    public Menu(String name) {
+        this.name = name;
+        this.menuItems = new ArrayList<>(); // List 초기화
+    }
+
     // MenuItem 클래스를 List로 관리
+    public void addMenuItem(MenuItem item) {
+        menuItems.add(item); // MenuItem을 List에 추가
+    }
 
     // List에 들어있는 MenuItem을 순차적으로 보여주는 함수
-    // List를 리턴하는 함수
+    public void display() {
+        System.out.println("[ " + name + " ]");
+        for (int i = 0; i < menuItems.size(); i++) {
+            System.out.println((i + 1) + ". " + menuItems.get(i).toString());
+        }
+        // 메인 메뉴에서는 "0. 종료"로 표시
+        if (name.equals("MAIN MENU")) {
+            System.out.println("0. 종료");
+        } else {
+            System.out.println("0. 뒤로가기");
+        }
+    }
 
-    // 구조에 맞게 함수를 선언해놓고 가져다 사용하세요.
+    // List를 리턴하는 함수
+    public List<MenuItem> getMenuItems() {
+        return menuItems; // MenuItem 리스트 반환
+    }
+
+    public String getName() {
+        return name; // 메뉴 이름 반환
+    }
 }
